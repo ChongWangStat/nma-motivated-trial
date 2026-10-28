@@ -1,0 +1,8 @@
+"analysis","p_value"
+"New trial alone",0.0255
+"Existing network plus new trial, ignoring selection",0.0074
+"Method 1, closed form, rule p < .1",0.0697
+"Method 1, resampling, rule p < .1",0.0625
+"Method 1, closed form, rule .05 < p < .1",0.0148
+"Method 2, closed form",0.0127
+"Method 2, resampling",0.0097
