@@ -1,4 +1,4 @@
-## Simulation with the closed-form Methods 1 and 2 (manuscript Tables 3.3-3.4). Run from the repository root.
+## Simulation with the closed-form Methods 1 and 2 (manuscript Tables 3-4). Run from the repository root.
 ## About 3 minutes with the default numbers of simulated networks.
 source("R/nma_fe.R"); source("R/closed_form.R")
 set.seed(20261028)
@@ -52,5 +52,5 @@ run <- function(nsim, pA, pB, ns = c(30, 50, 100, 150, 200)){
   do.call(rbind, out)
 }
 nt <- attr(risk, "n_by_trt"); p0 <- unname((risk[A]*nt[A] + risk[B]*nt[B])/(nt[A] + nt[B]))
-H0 <- run(N_H0, p0, p0);   print(H0, digits = 3); write.csv(H0, "results/table3_3_type1_closed_form.csv", row.names = FALSE)
-H1 <- run(N_H1, .35, .55); print(H1, digits = 3); write.csv(H1, "results/table3_4_power_closed_form.csv", row.names = FALSE)
+H0 <- run(N_H0, p0, p0);   print(H0, digits = 3); write.csv(H0, "results/table3_type1_closed_form.csv", row.names = FALSE)
+H1 <- run(N_H1, .35, .55); print(H1, digits = 3); write.csv(H1, "results/table4_power_closed_form.csv", row.names = FALSE)

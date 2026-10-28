@@ -1,5 +1,5 @@
 ## Closed-form inference for a new A-B trial whose conduct was motivated by an existing NMA.
-## Notation (manuscript Section 3.4.3): z_old, v_old = z statistic and variance of the existing-network
+## Notation (manuscript Section 2.4): z_old, v_old = z statistic and variance of the existing-network
 ## A-B estimate; y_new, v_new = log odds ratio and variance of the new trial; w = v_new/(v_old + v_new).
 
 z_sel <- function(alpha_sel) qnorm(1 - alpha_sel/2)
@@ -27,7 +27,7 @@ q_sel <- function(c, w, R, delta_old = 0, delta_new = 0){
   unname(num/den)
 }
 
-## Main function: naive, alone, Method 1 (eq. 3) and Method 2 (eq. 5) p-values
+## Main function: unadjusted ("naive"), alone, Method 1 (eq. 3) and Method 2 (eq. 5) p-values
 nma_update_test <- function(z_old, v_old, y_new, v_new, criterion = "lt", alpha_sel = 0.10, band = c(0.05, 0.10)){
   w <- unname(v_new/(v_old + v_new))
   est <- (z_old*sqrt(v_old)/v_old + y_new/v_new)/(1/v_old + 1/v_new)
@@ -46,7 +46,8 @@ crit_value <- function(w, criterion = "lt", alpha = 0.05, ...){
   uniroot(function(c) q_sel(c, w, R) - alpha, c(0.5, 8), tol = 1e-10)$root
 }
 
-## Type I error of the naive analysis under selection (Proposition 1); depends only on w and R
+## Type I error of the unadjusted analysis (new trial added to the network, selection ignored;
+## called "naive" in the code) under selection (Proposition 1); depends only on w and R
 naive_type1 <- function(w, criterion = "lt", alpha = 0.05, ...)
   q_sel(qnorm(1 - alpha/2), w, selection_region(criterion, ...))
 
