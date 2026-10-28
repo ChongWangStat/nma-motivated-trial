@@ -1,5 +1,5 @@
 ## Critical values, type I error of the unadjusted ("naive") analysis, conditional type I error of Method 1, and the design example
-## (manuscript Section 2.5, Tables 6-7). Run from the repository root.
+## (manuscript Section 2.2.4, Tables 6-7). Run from the repository root.
 source("R/nma_fe.R"); source("R/closed_form.R")
 ws <- c(0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .95)
 tab <- data.frame(w = ws,

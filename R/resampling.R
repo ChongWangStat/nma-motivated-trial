@@ -1,4 +1,4 @@
-## Resampling versions of Methods 1 and 2 (manuscript Sections 2.2-2.3), as described in the text.
+## Resampling versions of Methods 1 and 2 (manuscript Sections 2.2.1-2.2.2), as described in the text.
 ## Correction relative to github.com/lamckeen/Error-Control-NMA: in Method 1 the resampled data are kept
 ## when the A-B p-value of the EXISTING network (new trial removed) meets the selection rule; the original
 ## scripts applied the rule to the network that includes the new trial.

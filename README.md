@@ -7,7 +7,7 @@ When a new two-arm trial is conducted *because* an existing network meta-analysi
 - **Method 1** (selection rule known): conditions on the selection event.
 - **Method 2** (selection rule unknown): conditions on the observed result of the existing network.
 
-Both are provided as the resampling procedures described in the paper and as exact closed forms (Section 2.4 of the paper). It also includes the theoretical quantities in Section 2.5: critical values of Method 1, the type one error of the unadjusted analysis (the new trial added to the network with the selection ignored; `naive_type1()`), and conditional power and sample size for planning the new trial.
+Both are provided as the resampling procedures described in the paper and as exact closed forms (Section 2.2.3 of the paper). It also includes the theoretical quantities in Section 2.2.4: critical values of Method 1, the type one error of the unadjusted analysis (the new trial added to the network with the selection ignored; `naive_type1()`), and conditional power and sample size for planning the new trial.
 
 Everything uses base R (no packages needed). Run scripts from the repository root.
 
@@ -40,7 +40,7 @@ nma_update_test(old$z, old$se^2, y_new, v_new, criterion = "lt")   # rule: exist
 
 That repository holds an earlier version of the code from McKeen's thesis work; this repository is the version that accompanies the paper. Differences:
 
-1. **Method 1 selection rule.** As in the paper (Section 2.2, step 6) and in the later version of the resampling code in McKeen's notes, a resampled data set is kept when the A–B p-value of the *existing* network (the resampled network with the new trial removed) meets the selection rule. The scripts in the earlier repository applied the rule to the network including the new trial.
+1. **Method 1 selection rule.** As in the paper (Section 2.2.1, step 6) and in the later version of the resampling code in McKeen's notes, a resampled data set is kept when the A–B p-value of the *existing* network (the resampled network with the new trial removed) meets the selection rule. The scripts in the earlier repository applied the rule to the network including the new trial.
 2. The pooled null risk for treatments A and B is computed from the data rather than from hard-coded arm totals.
 3. Closed forms, theoretical quantities and planning functions are added.
 4. Only base R is used.
