@@ -1,5 +1,5 @@
 ## Closed-form inference for a new A-B trial whose conduct was motivated by an existing NMA.
-## Notation (manuscript Section 2.2.3): z_old, v_old = z statistic and variance of the existing-network
+## Notation (manuscript Section 2.3.3): z_old, v_old = z statistic and variance of the existing-network
 ## A-B estimate; y_new, v_new = log odds ratio and variance of the new trial; w = v_new/(v_old + v_new).
 
 z_sel <- function(alpha_sel) qnorm(1 - alpha_sel/2)

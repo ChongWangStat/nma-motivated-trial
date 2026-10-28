@@ -1,4 +1,4 @@
-## Illustrative example (manuscript Section 3.2, Table 5). Run from the repository root.
+## Illustrative example (manuscript Section 3.4). Run from the repository root.
 source("R/nma_fe.R"); source("R/closed_form.R"); source("R/resampling.R")
 set.seed(1)
 d   <- read_brd("data/BRD_Arm_Network.csv")
@@ -20,4 +20,4 @@ out <- data.frame(
   p_value = round(c(cf_lt["p_alone"], cf_lt["p_naive"], cf_lt["p_method1"], rs1["p"],
                     cf_band["p_method1"], cf_lt["p_method2"], rs2["p"]), 4))
 print(out); cat("w =", round(cf_lt["w"], 4), " t =", round(cf_lt["t"], 4), " resamples kept (Method 1):", rs1["n_kept"], "\n")
-write.csv(out, "results/table5_example.csv", row.names = FALSE)
+write.csv(out, "results/example_cefth_trim.csv", row.names = FALSE)
